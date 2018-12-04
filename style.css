@@ -1,0 +1,92 @@
+body { background-color:#000; }
+.left {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+.right {
+        -moz-transform: scaleX(1);
+        -o-transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+#bee {transition: transform .1s}
+
+#white {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+}
+
+body
+{
+  font-family: sans-serif;
+}
+/* .image-hover-text-container
+{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  transition: all 0.2s linear;
+} */
+
+.image-hover-image
+{
+ display: block;
+ width:20%;
+}
+/* Make the image round */
+.image-hover-image img
+{
+  border-radius: 0%;
+  width: 100px;
+  opacity: 0;
+  /* transform: translate(100px, 300px); */
+
+}
+
+.image-hover-image img:hover{
+  opacity: 1.0;
+}
+
+.reset {
+background-attachment: scroll;
+background-clip: border-box;
+background-color:blue;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+border-top-left-radius: 50px;
+border-top-right-radius: 50px;
+box-sizing: border-box;
+color: white;
+cursor: pointer;
+display: inline-block;
+font-family: arial, sans-serif;
+font-size: 15px;
+height: 50px;
+line-height: normal;
+margin-bottom: 8px;
+margin-top: 8px;
+min-height: 0px;
+min-width: 208px;
+padding-bottom: 24px;
+padding-left: 24px;
+padding-right: 24px;
+padding-top: 24px;
+position: relative;
+text-align: center;
+text-transform: none;
+transition-delay: 0s;
+transition-duration: 0.28s;
+transition-property: box-shadow;
+width: 100px;
+z-index: 0;
+}

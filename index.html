@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>interactive final project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="bee">
+  <img src="nyancat.png" width="150px">
+</div>
+
+  <div class="image-hover-image">
+    <img src="donut.png">
+  </div>
+
+  <a href="https://jiwoolee23.github.io/jiwoolee/newindex.html"><div class="reset">RESTART?</div></a>
+
+
+<script>
+var bee = document.getElementById("bee");
+document.addEventListener("mousemove", getMouse);
+
+
+bee.style.position = "absolute"; //css
+var beepos = {x:0, y:0};
+
+setInterval(followMouse, 50);
+
+var mouse = {x:0, y:0}; //mouse.x, mouse.y
+
+var dir = "right";
+function getMouse(e){
+ mouse.x = e.pageX;
+ mouse.y = e.pageY;
+   //Checking directional change
+   if(mouse.x > beepos.x){
+     dir = "right";
+   } else {
+     dir = "left";
+   }
+}
+
+function followMouse(){
+ //1. find distance X , distance Y
+ var distX = mouse.x - beepos.x;
+ var distY = mouse.y - beepos.y;
+ //Easing motion
+  //Progressive reduction of distance
+ beepos.x += distX/5;
+ beepos.y += distY/2;
+
+ bee.style.left = beepos.x + "px";
+ bee.style.top = beepos.y + "px";
+
+
+   //Apply css class
+   if (dir == "right"){
+     bee.setAttribute("class", "right");
+   } else {
+     bee.setAttribute("class", "left");
+   }
+
+}
+
+let x, y
+
+x = Math.floor(Math.random() * 400)
+y = Math.floor(Math.random() * 200)
+console.log(x)
+console.log(y)
+$('.image-hover-image').css({"transform":"translate("+x+"px,"+y+"px)"})
+
+</script>
+</html>
