@@ -12,7 +12,14 @@
 </div>
 
   <div class="image-hover-image">
-    <img src="cheese.png"></img>
+  <a href="#" onmouseenter="playAudio()">  <img src="cheese.png"></a>
+
+<audio id="audioID">
+  <source src="meow.ogg" type="audio/ogg">
+  <source src="meow.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</img>
   </div>
 
   <a href="https://jiwoolee23.github.io/cat/index.html"><div class="reset">RESTART?</div></a>
@@ -72,5 +79,14 @@ console.log(x)
 console.log(y)
 $('.image-hover-image').css({"transform":"translate("+x+"px,"+y+"px)"})
 
+//Defining variable based on unique ID
+
+var audio1 = document.getElementById("audioID");
+
+//Example of an HTML Audio/Video Method
+
+function playAudio() {
+  audio1.play();
+}
 </script>
 </html>
