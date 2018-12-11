@@ -42,6 +42,9 @@ body
  width:20%;
 }
 /* Make the image round */
+.foundit:hover {
+  color: white;
+}
 .image-hover-image img
 {
   border-radius: 0%;
