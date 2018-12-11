@@ -1,63 +1,32 @@
-body { background-color:#000; }
-.left {
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-}
-.right {
-        -moz-transform: scaleX(1);
-        -o-transform: scaleX(1);
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-}
-#bee {transition: transform .1s}
-
-#white {
-  background-color: black;
-  width: 40px;
-  height: 40px;
+body {background-color:black;}
+.left{
+-moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+-ms-filter: "FlipH";
 }
 
-body
-{
-  font-family: sans-serif;
-}
-/* .image-hover-text-container
-{
-  position: relative;
-  display: inline-block;
-  width: auto;
-  height: auto;
-  transition: all 0.2s linear;
-} */
+.right{
+-moz-transform: scaleX(1);
+-o-transform: scaleX(1);
+-webkit-transform: scaleX(1);
+transform: scaleX(1);
+-ms-filter: "FlipH";}
 
-.image-hover-image
-{
+.hoveringcheese{
  display: block;
- width:20%;
-}
-/* Make the image round */
-.foundit:hover {
-  color: white;
-}
-.image-hover-image img
-{
+ width:20%;}
+
+.hoveringcheese img{
   border-radius: 0%;
   width: 100px;
-  opacity: 0;
-  /* transform: translate(100px, 300px); */
+  opacity: 0;}
 
-}
+.hoveringcheese img:hover{
+  opacity: 1.0;}
 
-.image-hover-image img:hover{
-  opacity: 1.0;
-}
-
+/*reset박스를 표현하는 css*/
 .reset {
 background-attachment: scroll;
 background-clip: border-box;
@@ -73,23 +42,20 @@ color: white;
 cursor: pointer;
 display: inline-block;
 font-family: arial, sans-serif;
-font-size: 15px;
+font-size: 20px;
 height: 50px;
 line-height: normal;
-margin-bottom: 8px;
-margin-top: 8px;
-min-height: 0px;
-min-width: 208px;
-padding-bottom: 24px;
-padding-left: 24px;
-padding-right: 24px;
-padding-top: 24px;
+margin-top: 20%;
+margin-left:40%;
+min-height: 50px;
+min-width: 200px;
+padding-bottom:40px;
+padding-left:20px;
+padding-right:20px;
+padding-top:20px;
 position: relative;
 text-align: center;
 text-transform: none;
-transition-delay: 0s;
-transition-duration: 0.28s;
-transition-property: box-shadow;
 width: 100px;
 z-index: 0;
 }

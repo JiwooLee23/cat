@@ -6,32 +6,36 @@
     <title>interactive final project</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
-  <body>
-    <div id="bee">
-  <img src="nyancat.png" width="150px">
+
+<body>
+<!-- 날아다니는 고양이를 표현하는 코딩 -->
+<div id="fly">
+    <img src="nyancat.png" width="150px">
 </div>
 
-  <div class="image-hover-image">
-  <a href="#" onmouseenter="playAudio()">  <img src="cheese.png"></a>
+<!-- 치즈를 hover할때 쓰이는 코딩 -->
+<div class="hoveringcheese">
+  <a href="#" onmouseenter="playAudio()">
+    <img src="cheese.png"></a>
+    <audio id="audioID">
+    <source src="hello.ogg" type="audio/ogg">
+    <source src="hello.mp3" type="audio/mpeg">
+    </audio>
+    </img>
+</div>
 
-<audio id="audioID">
-  <source src="meow.ogg" type="audio/ogg">
-  <source src="meow.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-</img>
-  </div>
+<!-- reset박스 코딩 -->
+<a href="https://jiwoolee23.github.io/cat/index.html"><div class="reset">Restart?</div></a>
+</body>
 
-  <a href="https://jiwoolee23.github.io/cat/index.html"><div class="reset">RESTART?</div></a>
-
-
+javascript 코딩
 <script>
-var bee = document.getElementById("bee");
+var fly = document.getElementById("fly");
 document.addEventListener("mousemove", getMouse);
 
 
-bee.style.position = "absolute"; //css
-var beepos = {x:0, y:0};
+fly.style.position = "absolute"; //css
+var flypos = {x:0, y:0};
 
 setInterval(followMouse, 50);
 
@@ -42,7 +46,7 @@ function getMouse(e){
  mouse.x = e.pageX;
  mouse.y = e.pageY;
    //Checking directional change
-   if(mouse.x > beepos.x){
+   if(mouse.x > flypos.x){
      dir = "right";
    } else {
      dir = "left";
@@ -51,40 +55,35 @@ function getMouse(e){
 
 function followMouse(){
  //1. find distance X , distance Y
- var distX = mouse.x - beepos.x;
- var distY = mouse.y - beepos.y;
+ var distX = mouse.x - flypos.x;
+ var distY = mouse.y - flypos.y;
  //Easing motion
   //Progressive reduction of distance
- beepos.x += distX/5;
- beepos.y += distY/2;
+ flypos.x += distX/5;
+ flypos.y += distY/2;
 
- bee.style.left = beepos.x + "px";
- bee.style.top = beepos.y + "px";
+ fly.style.left = flypos.x + "px";
+ fly.style.top = flypos.y + "px";
 
 
    //Apply css class
    if (dir == "right"){
-     bee.setAttribute("class", "right");
+     fly.setAttribute("class", "right");
    } else {
-     bee.setAttribute("class", "left");
+     fly.setAttribute("class", "left");
    }
 
 }
 
 let x, y
-
 x = Math.floor(Math.random() * 1200)
 y = Math.floor(Math.random() * 700)
 console.log(x)
 console.log(y)
-$('.image-hover-image').css({"transform":"translate("+x+"px,"+y+"px)"})
+$('.hoveringcheese').css({"transform":"translate("+x+"px,"+y+"px)"})
 
-//Defining variable based on unique ID
-
+// mp3를 이용한 코딩
 var audio1 = document.getElementById("audioID");
-
-//Example of an HTML Audio/Video Method
-
 function playAudio() {
   audio1.play();
 }
